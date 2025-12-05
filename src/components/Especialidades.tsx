@@ -1,0 +1,65 @@
+import Image from "next/image";
+import { AccordionEspecialidades } from "./AccordionEspecialidades";
+import OnlineMeeting from '../../public/online.png';
+
+async function getEspecialidadesData() {
+    return {
+        especialidades: [
+            {
+                title: 'Atendimento Online',
+                description:
+                    'Sessões realizadas por chamada de vídeo, com a mesma qualidade, sigilo e acolhimento do atendimento presencial. Ideal para quem busca flexibilidade, comodidade e continuidade no cuidado psicológico.',
+            },
+            {
+                title: 'Ansiedade e Estresse',
+                description:
+                    'Apoio terapêutico para compreender causas, reduzir sintomas e desenvolver estratégias eficazes para lidar com preocupações excessivas, tensão constante e sobrecarga emocional.',
+            },
+            {
+                title: 'Depressão e Desânimo',
+                description:
+                    'Acompanhamento sensível e profissional para ajudar você a recuperar a motivação, restabelecer o equilíbrio emocional e construir confiança no seu processo de cura.',
+            },
+            {
+                title: 'Autoconhecimento e Desenvolvimento Emocional',
+                description:
+                    'Trabalho terapêutico voltado a ampliar sua compreensão sobre si, seus padrões e suas necessidades, fortalecendo autoestima, limites pessoais e escolhas mais conscientes.',
+            },
+            {
+                title: 'Relacionamentos e Comunicação',
+                description:
+                    'Apoio para desenvolver vínculos mais saudáveis, melhorar a comunicação e compreender conflitos emocionais que impactam relações familiares, afetivas e profissionais.',
+            },
+            {
+                title: 'Apoio em Momentos de Mudança',
+                description:
+                    'Acompanhamento durante fases desafiadoras, como luto, transições de carreira, término de relacionamento ou mudanças importantes na vida.',
+            },
+        ],
+    };
+}
+
+export default async function Especialidades() {
+
+    const especData = await getEspecialidadesData();
+
+    return (
+        <section id="servicos" className="p-20 px-[150px]">
+            <div className="flex flex-col md:flex-row gap-8 md:gap-12 justify-center w-full max-w-7xl mx-auto">
+
+                <div className="w-auto h-100 flex-shrink-0">
+                    <Image
+                        src={OnlineMeeting}
+                        alt="Atendimento online com Bruna Laprovitera"
+                        className="h-full w-auto drop-shadow-xl/50"
+                    />
+                </div>
+
+                <div className="w-full">
+                    <h3 className="text-4xl mb-6 font-nanum-myeongjo">Meus Serviços</h3>
+                    <AccordionEspecialidades especialidades={especData.especialidades} />
+                </div>
+            </div>
+        </section>
+    )
+}
