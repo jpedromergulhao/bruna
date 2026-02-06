@@ -19,7 +19,11 @@ export default function Navbar({ links }: NavbarProps) {
 
     return (
         <header className="fixed w-full top-0 py-4 z-50 flex justify-center px-4">
-            <nav className="hidden md:flex flex-row items-center space-x-6 py-3 px-8 text-sm bg-black/20 backdrop-blur-md rounded-full shadow-lg text-light-gray border border-white/10">
+            <nav
+                data-aos="fade-down"
+                data-aos-duration="1500"
+                className="hidden md:flex flex-row items-center space-x-6 py-3 px-8 text-sm bg-black/20 backdrop-blur-md rounded-full shadow-lg text-light-gray border border-white/10"
+            >
                 {links.map((link, index) => (
                     <Link key={index} href={link.href} className="cursor-pointer hover:text-pastel-gray-orange transition-colors duration-300">
                         {link.label}
@@ -30,7 +34,10 @@ export default function Navbar({ links }: NavbarProps) {
             <div className="md:hidden w-full flex justify-end">
                 <Sheet open={open} onOpenChange={setOpen}>
                     <SheetTrigger asChild>
-                        <button className="p-3 bg-black/40 backdrop-blur-md rounded-full text-light-gray shadow-lg border border-white/10 active:scale-90 transition-transform">
+                        <button
+                            data-aos="fade-left"
+                            data-aos-duration="1500"
+                            className="p-3 bg-black/40 backdrop-blur-md rounded-full text-light-gray shadow-lg border border-white/10 active:scale-90 transition-transform">
                             <Menu size={24} />
                         </button>
                     </SheetTrigger>
