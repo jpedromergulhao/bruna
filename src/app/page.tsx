@@ -7,11 +7,11 @@ import SobreMim from "@/components/SobreMim";
 async function getHomeData() {
   return {
     name: 'Bruna Arruda Laprovitera',
-    crp: '00/0000',
+    crp: '02/32980',
     cta: {
       label: 'Falar comigo',
-      number: 'https://wa.me/5581999998888',
-      message: 'Olá Bruna, vim pelo site e gostaria de agendar uma sessão com você. 😊',
+      number: '+5581991999249',
+      message: 'Olá Bruna, vim pelo site e gostaria de agendar uma sessão com você. Poderia me passar mais detalhes?',
     },
   };
 }

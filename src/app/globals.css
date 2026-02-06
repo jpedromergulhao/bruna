@@ -5,26 +5,119 @@
   font-family: var(--font-lexend), Arial, Helvetica, sans-serif;
 }
 
-p, button {
-  color: var(--color-secondary);
-}
-
-body {
-  color: var(--color-secondary);
-  background-color: var(--color-primary-dark);
-}
-
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-nanum-myeongjo), serif;
-  color: var(--color-secondary);
+
 }
 
 @keyframes slideDown {
-  from { height: 0; }
-  to { height: var(--radix-accordion-content-height); }
+  from {
+    height: 0;
+  }
+
+  to {
+    height: var(--radix-accordion-content-height);
+  }
 }
 
 @keyframes slideUp {
-  from { height: var(--radix-accordion-content-height); }
-  to { height: 0; }
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+
+  to {
+    height: 0;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes reveal {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes loading-bar {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-reveal {
+  animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.animate-loading-bar {
+  animation: loading-bar 2s infinite ease-in-out;
+}
+
+@layer utilities {
+
+  /* Efeito de respiração suave na logo */
+  .animate-breathing {
+    animation: breathing 2.5s ease-in-out infinite;
+  }
+
+  /* Linha que expande do centro para as pontas */
+  .animate-expand-line {
+    animation: expandLine 2s ease-in-out forwards;
+  }
+}
+
+@keyframes breathing {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.98);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes expandLine {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+
+  100% {
+    width: 48px;
+    opacity: 1;
+  }
+}
+
+[data-aos] {
+  pointer-events: none;
+}
+
+.aos-animate {
+  pointer-events: auto;
 }

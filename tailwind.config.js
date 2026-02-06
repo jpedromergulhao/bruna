@@ -11,10 +11,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary': 'var(--color-primary)',
-        'primary-light': 'var(--color-primary-light)',
-        'primary-dark': 'var(--color-primary-dark)',
-        'secondary': 'var(--color-secondary)',
+        'gray-azure': 'var(--color-gray-azure)',
+        'light-gray': 'var(--color-light-gray)',
+        'pastel-gray-orange': 'var(--color-pastel-gray-orange)',
+        'light-orange': 'var(--color-light-orange)',
+        'dark-gray-azure': 'var(--color-dark-gray-azure)',
       },
       keyframes: {
         slideDown: {

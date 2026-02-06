@@ -3,6 +3,8 @@ import { Lexend, Nanum_Myeongjo } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { jsonLd } from "@/lib/seo";
+import AosContainer from "@/containers/AosContainer";
 
 const nanumMyeongjo = Nanum_Myeongjo({
   weight: ['400', '700'],
@@ -90,11 +92,18 @@ export default async function RootLayout({
       <body
         className={`${nanumMyeongjo.variable} ${lexend.variable} antialiased`}
       >
-        <Navbar links={navData.links} />
-        <main>
-          {children}
-        </main>
-        <Footer />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+
+        <AosContainer>
+          <Navbar links={navData.links} />
+          <main>
+            {children}
+          </main>
+          <Footer />
+        </AosContainer>
       </body>
     </html>
   );

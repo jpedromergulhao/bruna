@@ -1,6 +1,10 @@
 @theme {
-    --color-primary: #896850;
-    --color-primary-light: #ab8664;
-    --color-primary-dark: #23190f;
-    --color-secondary: #fffbf2;
+    --color-gray-azure: #4b6779;
+    --color-light-gray: #e5e5e5;
+    --color-pastel-gray-orange: #d8a48f;
+    --color-light-orange: #f2ece5;
+    --color-dark-gray-azure: #2e3a45;
+
+    --animate-slide-down: slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1);
+    --animate-slide-up: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
 }

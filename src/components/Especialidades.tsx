@@ -1,6 +1,4 @@
-import Image from "next/image";
 import { AccordionEspecialidades } from "./AccordionEspecialidades";
-import OnlineMeeting from '../../public/online.png';
 
 async function getEspecialidadesData() {
     return {
@@ -44,19 +42,15 @@ export default async function Especialidades() {
     const especData = await getEspecialidadesData();
 
     return (
-        <section id="servicos" className="p-20 px-[150px]">
-            <div className="flex flex-col md:flex-row gap-8 md:gap-12 justify-center w-full max-w-7xl mx-auto">
-
-                <div className="w-auto h-100 flex-shrink-0">
-                    <Image
-                        src={OnlineMeeting}
-                        alt="Atendimento online com Bruna Laprovitera"
-                        className="h-full w-auto drop-shadow-xl/50"
-                    />
-                </div>
-
-                <div className="w-full">
-                    <h3 className="text-4xl mb-6 font-nanum-myeongjo">Meus Serviços</h3>
+        <section
+            id="especialidades"
+            className="py-16 md:py-24 bg-dark-gray-azure px-6 md:px-20 lg:px-[150px]"
+        >
+            <div className="flex flex-col items-center w-full max-w-4xl mx-auto">
+                <div className="w-full text-light-gray text-center md:text-left">
+                    <h2 className="text-3xl md:text-4xl mb-10 font-nanum-myeongjo">
+                        Meus Serviços
+                    </h2>
                     <AccordionEspecialidades especialidades={especData.especialidades} />
                 </div>
             </div>

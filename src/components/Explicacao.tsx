@@ -19,13 +19,18 @@ async function getExplicacaoData() {
 }
 
 export default async function Explicacao() {
-
     const explicacaoData = await getExplicacaoData();
 
     return (
-        <section id="abordagens" className="p-20 bg-secondary text-center">
-            <h3 className="text-primary-dark! italic text-3xl font-bold mb-10">O que é TCC, ACT e DBT?</h3>
+        <section
+            id="abordagens"
+            className="py-16 md:py-24 bg-light-gray px-6 md:px-20 lg:px-[150px]"
+            aria-labelledby="abordagens-title"
+        >
+            <h2 id="abordagens-title" className="text-dark-gray-azure text-3xl md:text-4xl font-bold mb-12 text-center font-nanum-myeongjo italic">
+                Abordagens Terapêuticas
+            </h2>
             <CarouselExplicacao data={explicacaoData} />
         </section>
     )
-}   
+} 
